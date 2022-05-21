@@ -16,13 +16,15 @@
       <div class="container text-center">
         <h1 class="title">21 game in Vue JS</h1>
         <div class="row text-center">
-          <div class="col-6" v-bind:class="{ active: activePlayer}">
+          <div v-bind:class="['col-6', activePlayer == 1 ? 'active' : '']">
             <img src="assets/player1.png">
             <p>Player 1</p>
+            <p>Score: <strong>{{playerOne.points}}</strong></p>
           </div>
-          <div class="col-6" v-bind:class="{ active: !activePlayer}">
+          <div v-bind:class="['col-6', activePlayer == 2 ? 'active' : '']">
             <img src="assets/player2.png">
             <p>Player 2</p>
+            <p>Score:<strong>{{playerTwo.points}}</strong></p>
           </div>
           <div class="controls col">
             <a href="" class="btn btn-success" v-on:click.prevent="changePlayer">Skip</a>
@@ -34,12 +36,14 @@
       <hr>
       <div class="row text-center">
         <div class="col-6">
-          <a href="">
+          <a href="" v-on:click.prevent="selectedCart">
             <img src="assets/baralho-cartas.png" alt="Card">
           </a>
         </div>
         <div class="col-6">
-          <img src="assets/carts/1.png" alt="Card">
+          <div v-if="cartSelected">
+            <img v-bind:src="'assets/carts/' + cartSelected + '.png'" alt="Card">
+          </div>
         </div>
        
 
@@ -51,11 +55,31 @@
     new Vue({
       el: "#app",
       data: {
-        activePlayer: true
+        activePlayer: 1, 
+        playerOne:{
+          points:0
+        },
+        playerTwo:{
+          points:0
+        }, 
+        cartSelected: ''
       }, 
       methods:{
         changePlayer(event){
-          this.activePlayer = !this.activePlayer;
+          this.activePlayer = this.activePlayer == 1 ? 2 : 1;
+        }, 
+        selectedCart(){
+          this.cartSelected = Math.floor(Math.random() * 13) + 1;
+
+          if( this.activePlayer == 1 ){
+            this.playerOne.points += this.cartSelected;
+          }
+
+          if( this.activePlayer == 2 ){
+            this.playerTwo.points += this.cartSelected;
+          }
+
+         
         }
       }
     });

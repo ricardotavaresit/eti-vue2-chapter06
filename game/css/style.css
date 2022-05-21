@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 160px;
+}
+
+.title {
+    color: #999;
+    text-transform: uppercase;
+    margin: 30px 0;
+
+}
+
+.active img {
+    background: #449d44;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.carts {}
+
+.cart {}
+
+ 

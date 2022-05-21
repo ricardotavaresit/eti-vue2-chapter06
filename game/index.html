@@ -7,12 +7,43 @@
     <title>eti-vue2-chapter06-01-game-layout-in-vue-js</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
  
   </head>
   <body>
     <div id="app">
-      <h1>21 game in Vue JS</h1>
+      <div class="container text-center">
+        <h1 class="title">21 game in Vue JS</h1>
+        <div class="row text-center">
+          <div class="col-6 active">
+            <img src="assets/player1.png">
+            <p>Player 1</p>
+          </div>
+          <div class="col-6">
+            <img src="assets/player2.png">
+            <p>Player 2</p>
+          </div>
+          <div class="controls col">
+            <a href="" class="btn btn-success">Skip</a>
+            <a href="" class="btn btn-primary">End game</a>
+            <a href="" class="btn btn-danger">Reset</a>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row text-center">
+        <div class="col-6">
+          <a href="">
+            <img src="assets/baralho-cartas.png" alt="Card">
+          </a>
+        </div>
+        <div class="col-6">
+          <img src="assets/carts/1.png" alt="Card">
+        </div>
+       
+
+      </div>
     </div>
   </body>
   <script>

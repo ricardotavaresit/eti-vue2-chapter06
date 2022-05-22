@@ -2,6 +2,7 @@ Chapter 06 - Game in Vue JS
 
 - Class 01: Layout game in Vue JS
 - Class 02: Skip game option in Vue JS
+- Class 03: Choose card and add points in Vue JS
 
 ## Technologies used
 

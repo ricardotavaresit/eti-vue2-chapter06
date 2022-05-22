@@ -28,7 +28,7 @@
           </div>
           <div class="controls col">
             <a href="" class="btn btn-success" v-on:click.prevent="changePlayer">Skip</a>
-            <a href="" class="btn btn-primary">End game</a>
+            <a href="" class="btn btn-primary" v-on:click.prevent="finishGame">End game</a>
             <a href="" class="btn btn-danger">Reset</a>
           </div>
         </div>
@@ -45,8 +45,6 @@
             <img v-bind:src="'assets/carts/' + cartSelected + '.png'" alt="Card">
           </div>
         </div>
-       
-
       </div>
     </div>
   </body>
@@ -79,7 +77,23 @@
             this.playerTwo.points += this.cartSelected;
           }
 
-         
+          if( this.playerOne.points >= 21 || this.playerTwo.points >= 21 ){
+            this.finishGame();
+          }
+
+        }, 
+        finishGame(){
+          if( this.playerOne.points <= 21 && this.playerOne.points > this.playerTwo.points){
+            alert("Win One");
+          }else if( this.playerTwo.points <= 21 && this.playerTwo.points > this.playerOne.points){
+            alert("Win Two");
+          }else if( this.playerOne.points > 21){
+            alert("Win Two");
+          }else if( this.playerTwo.points > 21){
+            alert("Win One");
+          }else{
+            alert("Draw");
+          }
         }
       }
     });

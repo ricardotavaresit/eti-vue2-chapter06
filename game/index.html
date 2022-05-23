@@ -65,6 +65,7 @@
       methods:{
         changePlayer(event){
           this.activePlayer = this.activePlayer == 1 ? 2 : 1;
+          this.cartSelected = ''
         }, 
         selectedCart(){
           this.cartSelected = Math.floor(Math.random() * 13) + 1;

@@ -94,6 +94,10 @@
           }else{
             alert("Draw");
           }
+          let vm = this;
+          setTimeout(function(){
+            vm.resetGame();
+          }, 1000);
         }, 
         resetGame(){
           this.playerOne.points = 0;

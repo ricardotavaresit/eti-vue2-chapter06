@@ -4,6 +4,7 @@ Chapter 06 - Game in Vue JS
 - Class 02: Skip game option in Vue JS
 - Class 03: Choose card and add points in Vue JS
 - Class 04: End game and game winner in Vue JS
+- Class 05: Reset game in Vue JS
 
 ## Technologies used
 

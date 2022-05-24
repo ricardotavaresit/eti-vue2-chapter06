@@ -20,7 +20,7 @@
             <img src="assets/player1.png">
             <p>
               Player 1
-              <span class="badge badge-default">{{playerOne.historic.length}}</span>
+              <span class="badge badge-default">{{ numberHistoricPlayerOne }}</span>
             </p>
             <p>Score: <strong>{{playerOne.points}}</strong></p>
           </div>
@@ -28,7 +28,7 @@
             <img src="assets/player2.png">
             <p>
               Player 2
-              <span class="badge badge-default">{{playerTwo.historic.length}}</span>
+              <span class="badge badge-default">{{ numberHistoricPlayerTwo }}</span>
             </p>
             <p>Score:<strong>{{playerTwo.points}}</strong></p>
           </div>
@@ -115,6 +115,14 @@
           this.playerTwo.points = 0;
           this.cartSelected = '';
           this.activePlayer == 1
+        }
+      }, 
+      computed:{
+        numberHistoricPlayerOne(){
+          return this.playerOne.historic.length
+        }, 
+        numberHistoricPlayerTwo(){
+          return this.playerTwo.historic.length
         }
       }
     });

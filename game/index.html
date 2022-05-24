@@ -18,12 +18,18 @@
         <div class="row text-center">
           <div v-bind:class="['col-6', activePlayer == 1 ? 'active' : '']">
             <img src="assets/player1.png">
-            <p>Player 1</p>
+            <p>
+              Player 1
+              <span class="badge badge-default">{{playerOne.historic.length}}</span>
+            </p>
             <p>Score: <strong>{{playerOne.points}}</strong></p>
           </div>
           <div v-bind:class="['col-6', activePlayer == 2 ? 'active' : '']">
             <img src="assets/player2.png">
-            <p>Player 2</p>
+            <p>
+              Player 2
+              <span class="badge badge-default">{{playerTwo.historic.length}}</span>
+            </p>
             <p>Score:<strong>{{playerTwo.points}}</strong></p>
           </div>
           <div class="controls col">
@@ -55,10 +61,12 @@
       data: {
         activePlayer: 1, 
         playerOne:{
-          points:0
+          points:0, 
+          historic: []
         },
         playerTwo:{
-          points:0
+          points:0, 
+          historic: []
         }, 
         cartSelected: ''
       }, 
@@ -72,10 +80,12 @@
 
           if( this.activePlayer == 1 ){
             this.playerOne.points += this.cartSelected;
+            this.playerOne.historic.push(this.cartSelected);
           }
 
           if( this.activePlayer == 2 ){
             this.playerTwo.points += this.cartSelected;
+            this.playerTwo.historic.push(this.cartSelected);
           }
 
           if( this.playerOne.points >= 21 || this.playerTwo.points >= 21 ){

@@ -1,4 +1,6 @@
-Chapter 06 - Game in Vue JS
+<p align="center"><img src="https://www.vectorlogo.zone/logos/vuejs/vuejs-ar21.svg" width="200px"></p>
+
+<h2>Chapter 06 - Game in Vue JS</h2>
 
 - Class 01: Layout game in Vue JS
 - Class 02: Skip game option in Vue JS
